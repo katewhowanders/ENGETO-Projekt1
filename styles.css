@@ -1,0 +1,525 @@
+:root {
+  --nav-bc-color: #33292a;
+  --nav-color: #fff;
+  --bc1-color: #33292a;
+  --bc2-color: #644b4f;
+  --bc3-color: #333333;
+  --bc4-color: #f2f2f2;
+  --link-color: #efa69d;
+  --link-hover-color: #e9877b;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Roboto";
+}
+
+/* NAVIGATION */
+.navigation {
+  background-color: var(--nav-bc-color);
+}
+
+.navigation-list {
+  color: var(--nav-color);
+  font-family: "Roboto", sans-serif;
+  list-style: none;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  gap: 70px;
+}
+
+.navigation-item {
+  padding: 24px 0;
+  text-align: center;
+}
+
+a {
+  text-decoration: none;
+  color: var(--nav-color);
+}
+
+a:hover {
+  color: var(--link-hover-color);
+}
+
+.icon {
+  display: none;
+  height: 35px;
+  width: 30px;
+  margin-left: auto;
+  margin-right: 20px;
+  padding-bottom: 5px;
+  padding-top: 5px;
+  cursor: pointer;
+}
+
+.icon img {
+  width: 100%;
+  height: 100%;
+}
+
+@media (min-width: 768px) {
+  .navigation-list {
+    width: 70%;
+  }
+}
+
+@media (max-width: 768px) {
+  .navigation-list {
+    display: none;
+  }
+
+  .icon {
+    display: block;
+  }
+}
+
+/* HERO SECTION */
+.hero {
+  background-image: url(./images/scott-goodwill-y8Ngwq34_Ak-unsplash.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 700px;
+
+  /* height: calc(100vh - 50px);  */
+  /* od 100% výšky obrazovky (100vh) odečteme výšku navigace */
+}
+
+.hero-wrapper {
+  margin: 0 auto;
+  padding: 48px 0;
+  position: relative;
+  height: 100%;
+}
+
+.hero-text {
+  color: var(--nav-color);
+  font-size: 70px;
+  font-weight: bold;
+  /* width: 700px; */
+  padding: 10px;
+  text-align: right;
+  position: absolute;
+  right: 0px;
+  bottom: 60px;
+}
+
+@media (min-width: 768px) {
+  .hero-wrapper {
+    width: 70%;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .hero-text {
+    font-size: 40px;
+    max-width: 300px;
+    text-align: right;
+    position: absolute;
+    right: 40px;
+    bottom: 30px;
+  }
+}
+
+/* ABOUT US SECTION */
+.about-wrapper {
+  display: flex;
+  /* justify-content: center; */
+  width: 95%;
+  margin: 0 auto;
+  padding: 48px 0;
+  gap: 20px;
+}
+
+.about-image {
+  background-image: url(./images/anneliese-phillips-uv4-vl3liKM-unsplash.jpg);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  /* flex-basis: calc(100% / 2 - 60px);
+  flex-shrink: 0; */
+  border-radius: 8px;
+  height: 400px;
+  width: 50%;
+}
+
+.about-text {
+  width: 50%;
+  text-align: justify;
+  font-size: 16px;
+}
+
+.about-text h2 {
+  margin-bottom: 32px;
+}
+
+@media (min-width: 768px) {
+  .about-wrapper {
+    width: 70%;
+  }
+}
+
+/* .gallery {
+  max-width: 800px;
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.gallery-item {
+  height: 200px;
+  width: calc(100% / 3 - 2 * 10px);
+  flex-shrink: 1;
+  border-radius: 15px;
+}
+
+.gallery-item img {
+  object-fit: cover;
+  object-position: center;
+}
+
+.text {
+  background-color: rgb(201, 201, 201);
+  background-image: none;
+  /*pro vycentrování textu: */
+/* display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 32px;
+  font-weight: bold;
+  height: 200px; vyška je jen 100px */
+/* }  */
+
+/* PRODUCT SECTION */
+.product {
+  background-color: var(--bc1-color);
+}
+
+.product-wrapper {
+  width: 95%;
+  margin: 0 auto;
+  padding: 48px 0;
+}
+
+.product-text {
+  margin-bottom: 120px;
+  text-align: center;
+  color: #fff;
+  font-size: 16px;
+}
+
+.product-text h2 {
+  margin-bottom: 32px;
+}
+
+.product-icons {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 48px;
+}
+
+.product-icon {
+  width: 150px;
+  height: 150px;
+  color: #fff;
+  text-align: center;
+}
+
+.product-icon h2 {
+  margin-top: 12px;
+}
+
+.product-icon-img {
+  width: 100px;
+  height: 100px;
+}
+
+.product-icon-img img {
+  width: 100%;
+  height: auto;
+}
+
+@media (min-width: 768px) {
+  .product-wrapper {
+    width: 70%;
+  }
+}
+
+/* GALLERY SECTION */
+
+.gallery-wrapper {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  height: 800px;
+  gap: 20px;
+  width: 95%;
+  margin: 0 auto;
+  margin-top: 72px;
+  margin-bottom: 72px;
+}
+
+.gallery-item-1 {
+  background-image: url(./images/simon-english-48nerZQCHgo-unsplash.jpg);
+  background-size: cover;
+  background-position: center;
+  border-radius: 5px;
+}
+
+.gallery-item-2 {
+  background-image: url(./images/james-wheeler-ZOA-cqKuJAA-unsplash.jpg);
+  background-size: cover;
+  background-position: center;
+  border-radius: 5px;
+}
+
+.gallery-item-3 {
+  background-image: url(./images/daniel-tseng-73lmMKhi2U8-unsplash.jpg);
+  background-size: cover;
+  background-position: center;
+  border-radius: 5px;
+}
+
+.gallery-item-4 {
+  background-image: url(./images/holly-mandarich-UVyOfX3v0Ls-unsplash.jpg);
+  background-size: cover;
+  background-position: center;
+  border-radius: 5px;
+}
+
+.gallery-text {
+  background-color: var(--bc4-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  font-size: 32px;
+  border-radius: 5px;
+}
+
+.gallery-item-5 {
+  background-image: url(./images/patrick-szylar-45bM3XGqnDE-unsplash.jpg);
+  background-size: cover;
+  background-position: center;
+  border-radius: 5px;
+}
+.gallery-item-6 {
+  background-image: url(./images/chung-yee-tsang-wqxCKM0R6R8-unsplash.jpg);
+  background-size: cover;
+  background-position: center;
+  border-radius: 5px;
+}
+.gallery-item-7 {
+  background-image: url(./images/julian-bialowas-ilkTnuMunP8-unsplash.jpg);
+  background-size: cover;
+  background-position: center;
+  border-radius: 5px;
+}
+.gallery-item-8 {
+  background-image: url(./images/matej-drha-rbDzMcJsBkY-unsplash.jpg);
+  background-size: cover;
+  background-position: center;
+  border-radius: 5px;
+}
+
+@media (min-width: 768px) {
+  .gallery-wrapper {
+    width: 70%;
+  }
+}
+
+/* CONTACT SECTION */
+/* predelat */
+.contact {
+  background-color: var(--bc2-color);
+}
+.contact-wrapper {
+  padding: 60px 20px;
+  margin: 0 auto;
+  width: 95%;
+  display: flex;
+  gap: 20px;
+}
+
+.contact-left-block {
+  max-width: 800px;
+  margin: auto;
+  color: var(--bc4-color);
+  width: 30%;
+  gap: 20px;
+  flex-direction: column;
+}
+
+.contact-right-block {
+  font-size: 16px;
+  color: #fff;
+  width: 70%;
+}
+
+.contact-text {
+  text-align: justify;
+}
+
+.contact-top {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.button {
+  background-color: white;
+  width: fit-content;
+  border-radius: 5px;
+  margin: auto;
+}
+
+.button a {
+  display: block;
+  width: 100%;
+  height: 100%;
+  padding: 10px 20px;
+  text-decoration: none;
+  color: black;
+  font-weight: bold;
+}
+
+@media (min-width: 768px) {
+  .contact-wrapper {
+    flex-direction: row;
+    width: 70%;
+  }
+
+  .contact-header {
+    text-align: right;
+  }
+  .contact-top {
+    text-align: left;
+  }
+  .button {
+    margin-left: 0;
+  }
+}
+
+/* REVIEW SECTION  */
+.review-wrapper {
+  width: 60%;
+  margin: 0 auto;
+  padding: 48px 0;
+}
+
+.review-text {
+  width: 50%;
+  text-align: center;
+  font-size: 16px;
+  margin: 0 auto;
+  margin-bottom: 100px;
+}
+
+.review-text h2 {
+  margin-bottom: 32px;
+}
+
+.review-cards {
+  display: flex;
+  gap: 50px;
+  /* margin-left: 50px;
+  margin-right: 50px; */
+}
+
+.review-card {
+  height: 400px;
+  width: 50%;
+}
+
+.review-card-text p {
+  padding-bottom: 20px;
+}
+
+.review-card-text h3 {
+  text-align: center;
+  font-weight: bold;
+}
+
+.review-card-img {
+  /* display: inline-block; */
+  width: 150px;
+  height: 150px;
+  margin: 0 auto;
+  /* border-radius: 50%; */
+  /* overflow: hidden; */
+}
+
+.review-card-img img {
+  width: 100%;
+  height: auto;
+  /* object-fit: cover; */
+  border-radius: 50%;
+}
+
+@media (min-width: 768px) {
+  .review-wrapper {
+    width: 70%;
+  }
+}
+
+/* ADDITIONAL PICS SECTION */
+.additional-pics-wrapper {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  height: 800px;
+}
+
+.image-1 {
+  background-image: url(./images/alexey-fedenkov-BaCZYH9RLmQ-unsplash.jpg);
+  background-size: cover;
+  background-position: center;
+}
+
+.image-2 {
+  background-image: url(./images/omer-salom-LoijtQXXNhs-unsplash.jpg);
+  background-size: cover;
+  background-position: center;
+}
+
+.image-3 {
+  background-image: url(./images/vincentiu-solomon-7MH4ped6_Mo-unsplash.jpg);
+  background-size: cover;
+  background-position: center;
+}
+
+.image-4 {
+  background-image: url(./images/daniel-tseng-73lmMKhi2U8-unsplash.jpg);
+  background-size: cover;
+  background-position: center;
+}
+
+/* FOOTER SECTION */
+.footer-container {
+  background-color: var(--bc3-color);
+  height: 140px;
+}
+
+footer h3 {
+  text-align: center;
+  padding-top: 40px;
+  padding-bottom: 20px;
+}
+
+footer h3 a {
+  color: var(--link-color);
+  text-decoration: underline;
+}
+
+footer p {
+  text-align: center;
+  color: var(--bc4-color);
+  padding-bottom: 40px;
+}
